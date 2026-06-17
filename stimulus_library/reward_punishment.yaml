@@ -1,0 +1,29 @@
+# Dopaminergic teaching signals: the fly's "good" / "bad" valence channels.
+#
+# NOTE: this is a pure leaky-integrate-and-fire model with NO synaptic
+# plasticity or neuromodulation. Driving these dopaminergic neurons propagates
+# their activity into the mushroom body; it does NOT form or update a memory.
+# These are the neural *correlates* of reward/punishment, not learning itself.
+
+reward_pam:
+  label: Reward signal (PAM dopaminergic)
+  category: reward
+  valence: positive
+  notes: |
+    PAM cluster dopaminergic neurons (PAM01..PAM15, ~307 neurons), the
+    appetitive teaching signal to the mushroom body (Liu et al. 2012;
+    Burke et al. 2012). Broad, strong drive - lower rate_hz if downstream
+    activity saturates.
+  primary:
+    select: { cell_class: [DAN], cell_type_contains: PAM }
+
+punishment_ppl1:
+  label: Punishment signal (PPL1 dopaminergic)
+  category: punishment
+  valence: negative
+  notes: |
+    PPL1 cluster dopaminergic neurons (PPL101..PPL108, ~16 neurons), the
+    aversive teaching signal to the mushroom body (Aso et al. 2010;
+    Claridge-Chang et al. 2009).
+  primary:
+    select: { cell_class: [DAN], cell_type_contains: PPL1 }

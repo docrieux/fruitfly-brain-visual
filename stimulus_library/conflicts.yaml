@@ -1,0 +1,49 @@
+# Conflict stimuli: simultaneously drive two contrary internal states.
+#
+# Built by composition - `compose: [a, b]` unions the channels of stimuli a and
+# b, so each side keeps its own neurons and rate. By default both sides are
+# driven at the same primary rate (balanced conflict); titrate with --r-poi or by
+# editing the underlying base stimuli.
+#
+# HONEST CAVEAT: this is a pure leaky-integrate-and-fire model - no plasticity,
+# no neuromodulation, no body. A conflict does NOT resolve into a behaviour.
+# Both populations simply spike and their activity collides in shared downstream
+# targets (e.g. MBONs receiving both PAM and PPL1). What you observe is the
+# neural *interference pattern*, not a decision.
+
+appetite_vs_disgust:
+  label: Appetite vs disgust (approach/avoid conflict)
+  category: conflict
+  valence: mixed
+  notes: |
+    Food-odor attraction (DM1/VA2) against CO2 aversion (glomerulus V) -
+    competing peripheral olfactory valence channels.
+  compose: [food_odor_vinegar, co2_avoidance]
+
+reward_vs_punishment:
+  label: Reward vs punishment (dopaminergic valence conflict)
+  category: conflict
+  valence: mixed
+  notes: |
+    PAM (appetitive teaching) against PPL1 (aversive teaching). Two opposing
+    dopaminergic signals colliding in the mushroom body; with no plasticity this
+    is interference, not a learned outcome.
+  compose: [reward_pam, punishment_ppl1]
+
+courtship_vs_avoidance:
+  label: Courtship vs avoidance (approach social cue while repelled)
+  category: conflict
+  valence: mixed
+  notes: |
+    Courtship drive (cVA + pC1 command) against innate CO2 avoidance - a social
+    approach signal competing with an aversive escape-promoting cue.
+  compose: [courtship_cva, co2_avoidance]
+
+fear_vs_arousal:
+  label: Fear vs arousal (defensive command under high arousal)
+  category: conflict
+  valence: mixed
+  notes: |
+    Escape/defensive command (DNp descending) layered on top of global
+    octopaminergic arousal - a startled, highly aroused state.
+  compose: [escape_dnp, arousal_octopamine]

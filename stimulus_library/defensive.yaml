@@ -1,0 +1,12 @@
+# Defensive / escape internal states.
+
+escape_dnp:
+  label: Escape / startle (DNp descending neurons)
+  category: defensive
+  valence: negative
+  notes: |
+    DNp descending neurons (~326), the brain's premotor escape/avoidance output,
+    including the looming-responsive giant-fiber pathway (DNp01) that triggers
+    take-off (von Reyn et al. 2014). Driving these emulates a defensive command.
+  primary:
+    select: { super_class: [descending], cell_type_contains: DNp }

@@ -1,0 +1,25 @@
+# Social / courtship internal states.
+
+pheromone_cva:
+  label: Pheromone (cVA)
+  category: social
+  valence: mixed
+  notes: |
+    Or67d cVA receptor neurons, glomerulus DA1 (Kurtovic et al. 2007). cVA is
+    context-dependent: it promotes male courtship suppression and aggression.
+  primary:
+    select: { types: [ORN_DA1] }
+
+courtship_cva:
+  label: Courtship drive (cVA sensing + pC1 command)
+  category: social
+  valence: positive
+  notes: |
+    Combines the peripheral cVA channel (ORN_DA1) with the central pC1 neurons
+    (pC1a-e), the fru/dsx+ command population that integrates courtship-relevant
+    cues and gates persistent courtship/social arousal.
+  channels:
+    # peripheral pheromone input
+    - select: { types: [ORN_DA1] }
+    # central command population (pC1a..pC1e)
+    - select: { super_class: [central], cell_type_contains: pC1 }

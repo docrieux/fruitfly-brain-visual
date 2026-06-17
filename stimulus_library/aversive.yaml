@@ -1,0 +1,20 @@
+# Aversive internal states: innate avoidance driven by labeled-line odor channels.
+
+co2_avoidance:
+  label: CO2 (aversive)
+  category: aversive
+  valence: negative
+  notes: |
+    Gr21a/Gr63a CO2-sensing ORNs, glomerulus V (Suh et al. 2004).
+  primary:
+    select: { types: [ORN_V] }
+
+geosmin_aversion:
+  label: Geosmin (toxic-microbe odor, aversive)
+  category: aversive
+  valence: negative
+  notes: |
+    Or56a, glomerulus DA2 - a dedicated, labeled-line aversive pathway tuned
+    almost exclusively to geosmin (Stensmyr et al. 2012).
+  primary:
+    select: { types: [ORN_DA2] }

@@ -1,0 +1,63 @@
+# Appetitive internal states: food attraction and gustatory reward.
+#
+# Schema (see stimuli.py for the loader):
+#   <name>:
+#     label:    human-readable, used in the GIF title
+#     category: appetitive | aversive | social | reward | punishment |
+#               defensive | arousal | conflict
+#     valence:  positive | negative | mixed | neutral
+#     notes:    free text (citations welcome)
+#     EITHER  primary: {select: ...}  [+ secondary: {select: ...}]   # 2-tier shorthand
+#     OR      channels: [{rate_hz: <Hz>, select: ...}, ...]          # explicit N-channel
+#     OR      compose: [<other stimulus name>, ...]                  # union of stimuli
+#
+#   select keys:
+#     types: [cell_type, ...]            exact cell_type match
+#     ids:   [root_id, ...]              explicit FlyWire root_ids
+#     cell_type_contains: <substring>    substring match on cell_type
+#     <annotation column>: [values, ...] e.g. cell_class, super_class, top_nt, side
+#   Within one select, different keys are AND-ed; lists within a key are OR-ed.
+
+food_odor_vinegar:
+  label: Food odor (vinegar-like)
+  category: appetitive
+  valence: positive
+  notes: |
+    Or42b/Or92a glomeruli (DM1/VA2) drive innate attraction; DM4/DM5 are
+    recruited at higher concentration (Semmelhack & Wang 2009; Root et al. 2009).
+  primary:
+    select: { types: [ORN_DM1, ORN_VA2] }
+  secondary:
+    select: { types: [ORN_DM4, ORN_DM5] }
+
+sugar_taste:
+  label: Sugar taste (gustatory)
+  category: appetitive
+  valence: positive
+  notes: |
+    Sugar-sensing gustatory receptor neurons. Explicit root_ids taken directly
+    from Shiu et al. 2023's own published example (a taste, not a smell).
+  primary:
+    select:
+      ids:
+        - 720575940624963786
+        - 720575940630233916
+        - 720575940637568838
+        - 720575940638202345
+        - 720575940617000768
+        - 720575940630797113
+        - 720575940632889389
+        - 720575940621754367
+        - 720575940621502051
+        - 720575940640649691
+        - 720575940639332736
+        - 720575940616885538
+        - 720575940639198653
+        - 720575940620900446
+        - 720575940617937543
+        - 720575940632425919
+        - 720575940633143833
+        - 720575940612670570
+        - 720575940628853239
+        - 720575940629176663
+        - 720575940611875570

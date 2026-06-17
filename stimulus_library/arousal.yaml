@@ -1,0 +1,14 @@
+# Global arousal / wakefulness internal states (neuromodulatory).
+
+arousal_octopamine:
+  label: Arousal (octopaminergic)
+  category: arousal
+  valence: neutral
+  notes: |
+    Central octopaminergic neurons - the insect analogue of noradrenaline and
+    the canonical driver of arousal/wakefulness and behavioral vigor
+    (Crocker & Sehgal 2008). Restricted to super_class=central to exclude the
+    many peripheral octopaminergic sensory neurons. Modulatory in the real fly;
+    here it is just extra excitatory drive, so treat as a coarse arousal proxy.
+  primary:
+    select: { top_nt: [octopamine], super_class: [central] }

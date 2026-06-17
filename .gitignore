@@ -1,0 +1,18 @@
+# Virtual environment and cache
+.venv/
+__pycache__/
+
+# Cloned datasets (fetched by setup_data.sh)
+/Drosophila_brain_model/
+/flywire_annotations/
+
+# Simulation + render outputs (keep the folder, ignore its contents)
+/results/*
+!/results/.gitkeep
+
+# Stray outputs if a command is ever run from the repo root
+/spikes_*.parquet
+/stimulus_neurons_*.csv
+/meta_*.txt
+/fly_brain_*.gif
+/.frames_*/

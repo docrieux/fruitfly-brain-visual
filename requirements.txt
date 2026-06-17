@@ -1,0 +1,12 @@
+# Pinned versions (verified working together on Python 3.11).
+# NOTE: numpy must stay <2 — Brian2 2.9.0 uses np.ndarray.ptp,
+# which NumPy 2.0 removed, so newer numpy breaks `import brian2`.
+brian2==2.9.0
+numpy==1.26.4
+pandas==3.0.3
+pyarrow==24.0.0
+joblib==1.5.3
+matplotlib==3.11.0
+imageio==2.37.3
+pillow==12.2.0
+pyyaml==6.0.3
