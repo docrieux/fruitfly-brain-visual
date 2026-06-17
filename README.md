@@ -1,5 +1,7 @@
 # Fly Brain Stimulus GIF Kit
 
+![repo-banner](./docs/repo_banner.png)
+
 Simulates the *Drosophila melanogaster* whole-brain connectome responding to a sensory stimulus, and renders the result as a rotating, anatomically positioned GIF. Two steps: `simulate.py` runs the network, `render_gif.py` turns the spikes into a GIF. Swapping the stimulus is a one line change.
 
 ## Motivations
